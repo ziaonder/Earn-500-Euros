@@ -521,6 +521,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1153ec6968d9d7145958319b891e7c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &471362922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471362924}
+  - component: {fileID: 471362923}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &471362923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471362922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75376921207f1fa498c97408463b84a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &471362924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471362922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8751702, y: -0.03777024, z: -10.0065365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &510314042
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,16 +739,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3199ec9b018f264d8c8df882f7b8a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondSpeed: 2
-  goldSpeed: 2
-  silverSpeed: 2
-  tinSpeed: 2
-  coalSpeed: 2
-  diamondAcc: 0.5
-  goldAcc: 0.5
-  silverAcc: 0.5
-  tinAcc: 0.5
-  coalAcc: 0.5
+  diamondSpeed: 3.5
+  goldSpeed: 3
+  silverSpeed: 2.5
+  tinSpeed: 3
+  coalSpeed: 5
+  diamondAcc: 0.2
+  goldAcc: 0.2
+  silverAcc: 0.2
+  tinAcc: 0.2
+  coalAcc: 0.2
 --- !u!4 &776331666
 Transform:
   m_ObjectHideFlags: 0
@@ -1975,7 +2019,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082833211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -0.3507751, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

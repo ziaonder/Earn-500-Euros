@@ -18,7 +18,7 @@ public class SpawnObjects : MonoBehaviour
     
     public IEnumerator SpawnObjectsInTime()
     {
-        while (true)
+        while (!Counter.Instance.isGameOver)
         {
             Instantiate(fallableObjects[CreateIndex()], new Vector3(CreateSpawnPoint(), transform.position.y),
                 Quaternion.identity);

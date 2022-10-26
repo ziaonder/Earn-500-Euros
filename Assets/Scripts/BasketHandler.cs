@@ -48,8 +48,8 @@ public class BasketHandler : MonoBehaviour
     {
         FallingObjectController.objectTag = collision.gameObject.tag;
         FallingObjectController.collidedObject = collision.gameObject;
-        OnObjectCollect();
-        UpdateScoreboard();
+        OnObjectCollect?.Invoke();
+        UpdateScoreboard?.Invoke();
     }
 }
 

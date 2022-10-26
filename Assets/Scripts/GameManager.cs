@@ -8,8 +8,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    public float diamondSpeed = 1f, goldSpeed = 1f, silverSpeed = 1f, tinSpeed = 1f, coalSpeed = 1f;
-    public float diamondAcc = .5f, goldAcc = .5f, silverAcc = .5f, tinAcc = .5f, coalAcc = .5f;
+    public float diamondSpeed = 3.5f, goldSpeed = 3f, silverSpeed = 2.5f, tinSpeed = 3f, coalSpeed = 5f;
+    public float diamondAcc = .2f, goldAcc = .2f, silverAcc = .2f, tinAcc = .2f, coalAcc = .2f;
     // Acc means acceleration here
 }
