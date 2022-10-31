@@ -16,15 +16,14 @@ public class Counter : MonoBehaviour
     public event Action OnTimeElapse;
     public bool isGameOver;
     private TextMeshProUGUI _textMeshPro;
-    private int counter = 5;
-    // Start is called before the first frame update
+    private int counter = 10;
+
     void Start()
     {
         _textMeshPro = GetComponent<TextMeshProUGUI>(); 
         StartCoroutine(DecreaseCounter());
     }
 
-    // Update is called once per frame
     void Update()
     {
         _textMeshPro.text = counter.ToString();

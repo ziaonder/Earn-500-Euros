@@ -10,6 +10,7 @@ TagManager:
   - Silver
   - Tin
   - Coal
+  - DropDiamond
   layers:
   - Default
   - TransparentFX

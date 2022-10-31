@@ -7,7 +7,9 @@ public class SceneChanger : MonoBehaviour
 {
     private void Start()
     {
-        Counter.Instance.OnTimeElapse += Scene3;
+        Scene currentScene = SceneManager.GetActiveScene();
+        if (currentScene.name == "Scene 2")
+            Counter.Instance.OnTimeElapse += Scene3;
     }
     public void Scene2()
     {
