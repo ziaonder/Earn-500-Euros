@@ -10,6 +10,13 @@ public class SceneChanger : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         if (currentScene.name == "Scene 2")
             Counter.Instance.OnTimeElapse += Scene3;
+        if (currentScene.name == "Scene 3")
+            ResultScript.Instance.OnSceneChange += Scene4;
+    }
+
+    public void Scene1()
+    {
+        SceneManager.LoadScene("Scene 1");
     }
     public void Scene2()
     {
@@ -19,5 +26,10 @@ public class SceneChanger : MonoBehaviour
     public void Scene3()
     {
         SceneManager.LoadScene("Scene 3");
+    }
+
+    public void Scene4()
+    {
+        SceneManager.LoadScene("Scene 4");
     }
 }

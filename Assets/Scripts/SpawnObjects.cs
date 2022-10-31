@@ -8,7 +8,7 @@ public class SpawnObjects : MonoBehaviour
     [SerializeField] private GameObject[] fallableObjects;
     private int leftEdge = -7, rightEdge = 7;
     private int spawnPoint;
-    private float spawnTime = 2.1f;
+    private float spawnTime = 1.5f;
 
     // Start is called before the first frame update
     void Start()

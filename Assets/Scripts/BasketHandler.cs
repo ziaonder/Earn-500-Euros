@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BasketHandler : MonoBehaviour
 {
+    [SerializeField] private GameObject badEffectObject, goodEffectObject;
+    [SerializeField] private AudioSource winSound, warningSound;
     public static BasketHandler Instance;
     public event Action OnObjectCollect;
     public event Action UpdateScoreboard;
@@ -46,6 +48,16 @@ public class BasketHandler : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Coal" || collision.gameObject.tag == "Tin")
+        {
+            warningSound.Play();
+            badEffectObject.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            winSound.Play();
+            goodEffectObject.GetComponent<ParticleSystem>().Play();
+        }
         FallingObjectController.objectTag = collision.gameObject.tag;
         FallingObjectController.collidedObject = collision.gameObject;
         OnObjectCollect?.Invoke();

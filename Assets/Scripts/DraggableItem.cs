@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    [SerializeField] private AudioSource warningSound;
     public static string itemSlotName;
     public static bool isDragging;
     private Vector3 initialPosition;
@@ -69,6 +70,7 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         }
         else
         {
+            warningSound.Play();
             gameObject.transform.position = initialPosition;
             // Warning sound
         }

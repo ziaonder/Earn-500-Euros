@@ -11,6 +11,7 @@ TagManager:
   - Tin
   - Coal
   - DropDiamond
+  - ImageResult
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
     locked: 0
   - name: Fallable
     uniqueID: 4145486071
+    locked: 0
+  - name: Effects
+    uniqueID: 46887341
     locked: 0

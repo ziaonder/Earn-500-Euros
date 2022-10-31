@@ -1,11 +1,14 @@
 using System;
+using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private static bool checkIfAllTaken;
+    [SerializeField] private GameObject[] highlights;
     [SerializeField] private string slotName;
     public static bool isdiamondTaken, isGoldTaken, isSilverTaken, isTinTaken, isCoalTaken;
     private bool[] isAllTaken = new bool[] { isdiamondTaken, isGoldTaken, isSilverTaken, isTinTaken, isCoalTaken };
@@ -23,19 +26,27 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     private void Update()
     {
         if (!checkIfAllTaken)
-        {
             IsAllTaken();
-        }
     }
 
     private void IsAllTaken()
     {
         if (isdiamondTaken == true && isGoldTaken == true && isSilverTaken == true && isTinTaken == true && isCoalTaken == true)
         {
+            DisableImage();
             checkIfAllTaken = true;
-            Debug.Log("hepsi true");
             UIMethod.SetNewValues();
-            // Sahne Degisimi
+            StartCoroutine(EnableHighlightImages());
+        }
+    }
+
+    private void DisableImage()
+    {
+        ItemSlot[] objects = FindObjectsOfType<ItemSlot>();
+        foreach(ItemSlot obj in objects)
+        {
+            obj.GetComponent<UnityEngine.UI.Image>().enabled = false;
+            obj.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
         }
     }
 
@@ -61,6 +72,17 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         }
     }
 
+    private IEnumerator EnableHighlightImages()
+    {
+        for(int i = 0; i < highlights.Length; i++)
+        {
+            yield return new WaitForSeconds(.8f);
+            highlights[i].GetComponent<UnityEngine.UI.Image>().enabled = true;
+            yield return new WaitForSeconds(.8f);
+            highlights[i].GetComponent<UnityEngine.UI.Image>().enabled = false;
+        }
+        FindObjectOfType<ResultScript>().CallEnableResult();
+    }
     public void OnDrop(PointerEventData eventData)
     {
         DraggableItem.itemSlotName = slotName;
