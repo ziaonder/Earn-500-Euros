@@ -12,7 +12,7 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public static bool isDragging;
     private Vector3 initialPosition;
     private CanvasGroup canvasGroup;
-    RectTransform rectTransform;
+    //RectTransform rectTransform;
     [SerializeField] Canvas canvas;
     public static bool isDraggable;
     private bool isClicked;
@@ -22,7 +22,7 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         isDraggable = false;
         itemSlotName = null;
         canvasGroup = GetComponent<CanvasGroup>();
-        rectTransform = GetComponent<RectTransform>();
+        //rectTransform = GetComponent<RectTransform>();
         StartCoroutine(SetTransform());
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -33,8 +33,10 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public void OnDrag(PointerEventData eventData)
     {
         if (isDraggable)
+        {
             isDragging = true;
             transform.position = Input.mousePosition;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -72,7 +74,6 @@ public class DraggableItem : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         {
             warningSound.Play();
             gameObject.transform.position = initialPosition;
-            // Warning sound
         }
     }
 

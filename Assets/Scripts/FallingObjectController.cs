@@ -50,37 +50,7 @@ public class FallingObjectController : MonoBehaviour
             default:
                 return 0;
         }
-    }
-
-    //private void Fall()
-    //{
-    //    rigidbody.velocity = new Vector2(0f, -speed);
-    //}
-
-    //private void SetInitialSpeed()
-    //{
-    //    switch (gameObject.tag)
-    //    {
-    //        case "Diamond":
-    //            speed = GameManager.Instance.diamondSpeed;
-    //            break;
-    //        case "Gold":
-    //            speed = GameManager.Instance.goldSpeed;
-    //            break;
-    //        case "Silver":
-    //            speed = GameManager.Instance.silverSpeed;
-    //            break;
-    //        case "Tin":
-    //            speed = GameManager.Instance.tinSpeed;
-    //            break;
-    //        case "Coal":
-    //            speed = GameManager.Instance.coalSpeed;
-    //            break;
-    //        default:
-    //            Debug.Log("no case");
-    //            break;
-    //    }
-    //}    
+    }   
 
     public void UpdateSpeed() // Not only updates the speed but also increments the counter variable of objects.
     {

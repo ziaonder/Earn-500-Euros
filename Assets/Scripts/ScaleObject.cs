@@ -4,7 +4,7 @@ using System;
 
 public class ScaleObject : MonoBehaviour
 {
-    [SerializeField] private GameObject[] buttons;
+    [SerializeField] private GameObject button;
     private Vector3 targetScale = new Vector3(2f, 2f);
     private Vector3 additionScale = new Vector3(.05f, .05f);
 
@@ -21,10 +21,6 @@ public class ScaleObject : MonoBehaviour
         }
 
         yield return new WaitForSeconds(.2f);
-
-        foreach(var button in buttons)
-        {
-            button.SetActive(true);
-        }
+        button.SetActive(true);
     }
 }

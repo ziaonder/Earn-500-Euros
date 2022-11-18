@@ -30,7 +30,6 @@ public class Counter : MonoBehaviour
         if(!isGameOver)
             CheckTime();
     }
-
     IEnumerator DecreaseCounter()
     {
         while (counter > 0)
@@ -39,7 +38,6 @@ public class Counter : MonoBehaviour
             counter--;
         }
     }
-    
     public void CheckTime()
     {
         if(counter <= 0)

@@ -12,7 +12,7 @@ public class UIMethod : MonoBehaviour
     {
         diamond = "diamond"; gold = "gold"; silver = "silver"; tin = "tin"; coal = "coal";
         _string = "CalculateMoney(int diamond, int gold, int silver, int tin, int coal){\r\n\ttotalScore = "
-        + $"({diamond}*100) + ({gold}*50) + ({silver}*20) + \n" + "        " + $"({tin}*-50) + ({coal}*-20);\r\n\treturn; \r\n}}";
+        + $"({diamond}*10) + ({gold}*5) + ({silver}*2) + \n" + "        " + $"({tin}*-5) + ({coal}*-2);\r\n\treturn; \r\n}}";
         
         TMPro = GetComponent<TextMeshProUGUI>();
         TMPro.text = _string;
@@ -27,7 +27,7 @@ public class UIMethod : MonoBehaviour
         coal = FallingObjectController.GetCount("Coal").ToString();
         
         _string = "CalculateMoney(int diamond, int gold, int silver, int tin, int coal){\r\n\ttotalScore = "
-        + $"({diamond}*100) + ({gold}*50) + ({silver}*20) + \n" + "        " + $"({tin}*-50) + ({coal}*-20);\r\n\treturn; \r\n}}";
+        + $"({diamond}*10) + ({gold}*5) + ({silver}*2) + \n" + "        " + $"({tin}*-5) + ({coal}*-2);\r\n\treturn; \r\n}}";
         TMPro.text = _string;
     }
 }

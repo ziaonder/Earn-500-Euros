@@ -17,10 +17,15 @@ public class ButtonEvents : MonoBehaviour
             StartCoroutine(EnableButton());
         }
     }
-
     public void Exit()
     {
+    #if (UNITY_EDITOR)
+            UnityEditor.EditorApplication.isPlaying = false;
+    #elif (UNITY_STANDALONE) 
         Application.Quit();
+    #elif (UNITY_WEBGL)
+        Application.OpenURL("about:blank");
+    #endif
     }
     public void SetDraggable()
     {
@@ -45,15 +50,6 @@ public class ButtonEvents : MonoBehaviour
     public void DisableButton()
     {
         gameObject.GetComponent<Button>().interactable = false;
-    }
-
-    public void ResetPositions()
-    {
-        foreach(var obj in FindObjectsOfType<DragDrop>())
-        {
-            obj.ResetPosition();
-        }
-        
     }
 
     private IEnumerator EnableButton()
