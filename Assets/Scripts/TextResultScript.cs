@@ -12,7 +12,7 @@ public class TextResultScript : MonoBehaviour
     }
     private TextMeshProUGUI TMPro;
     private int diamondValue = 10, goldValue = 5, silverValue = 2, tinValue = -5, coalValue = -2;
-    private static int TotalGainedMoney;
+    public static int TotalGainedMoney;
 
     private void Start()
     {
@@ -42,5 +42,6 @@ public class TextResultScript : MonoBehaviour
             tinValue * FallingObjectController.GetCount("Tin") + coalValue * FallingObjectController.GetCount("Coal");
 
         TMPro.text = "€" + TotalGainedMoney.ToString();
+        ScormSettings.Instance.AddScore();
     }
 }

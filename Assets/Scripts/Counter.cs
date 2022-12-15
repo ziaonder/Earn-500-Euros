@@ -16,7 +16,7 @@ public class Counter : MonoBehaviour
     public event Action OnTimeElapse;
     public bool isGameOver;
     private TextMeshProUGUI _textMeshPro;
-    private int counter = 90;
+    private int counter = 10;
 
     void Start()
     {

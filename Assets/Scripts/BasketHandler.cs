@@ -7,6 +7,7 @@ public class BasketHandler : MonoBehaviour
 {
     [SerializeField] private GameObject badEffectObject, goodEffectObject;
     [SerializeField] private AudioSource winSound, warningSound;
+    public static float additionalScore;
     public static BasketHandler Instance;
     public event Action OnObjectCollect;
     public event Action UpdateScoreboard;
@@ -48,15 +49,35 @@ public class BasketHandler : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Coal" || collision.gameObject.tag == "Tin")
+        if (collision.gameObject.tag == "Coal")
         {
             warningSound.Play();
             badEffectObject.GetComponent<ParticleSystem>().Play();
+            additionalScore = -2;
         }
-        else
+        else if(collision.gameObject.tag == "Tin")
+        {
+            warningSound.Play();
+            badEffectObject.GetComponent<ParticleSystem>().Play();
+            additionalScore = -5;
+        }
+        else if(collision.gameObject.tag == "Diamond")
         {
             winSound.Play();
             goodEffectObject.GetComponent<ParticleSystem>().Play();
+            additionalScore = 10;
+        }
+        else if(collision.gameObject.tag == "Gold")
+        {
+            winSound.Play();
+            goodEffectObject.GetComponent<ParticleSystem>().Play();
+            additionalScore = 5;
+        }
+        else if(collision.gameObject.tag == "Silver")
+        {
+            winSound.Play();
+            goodEffectObject.GetComponent<ParticleSystem>().Play();
+            additionalScore = 2;
         }
         FallingObjectController.objectTag = collision.gameObject.tag;
         FallingObjectController.collidedObject = collision.gameObject;
