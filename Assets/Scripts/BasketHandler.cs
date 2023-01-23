@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BasketHandler : MonoBehaviour
@@ -13,11 +11,25 @@ public class BasketHandler : MonoBehaviour
     public event Action UpdateScoreboard;
     private bool mousePressed;
     Vector3 mouseWorldPosition;
-    private float leftEdge = -7.7f, rightEdge = 7.7f;
+    private float initialEdge = 7.5f;
+    private float leftEdge = -7.5f, rightEdge = 7.5f;
+    private Vector2 initialScale = new Vector2(0.34f, 0.34f);
 
     private void Awake()
     {
+        if (Screen.currentResolution.width > Screen.currentResolution.height)
+        {
+            gameObject.transform.localScale = initialScale;
+            leftEdge = -initialEdge;
+            rightEdge = initialEdge;
+        }
+        else
+        {
+            gameObject.transform.localScale = initialScale / 2;
+        }
+        
         Instance = this;
+
     }
 
     void Update()
