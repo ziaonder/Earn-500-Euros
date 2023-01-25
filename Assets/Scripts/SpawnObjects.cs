@@ -30,7 +30,6 @@ public class SpawnObjects : MonoBehaviour
         Device currentlyUsedDevice = GetDevice();
         desktopResolutionWidth = 1920f;
         Resolution resolution = Screen.currentResolution;
-        Debug.Log(resolution);
         scaleTimes = resolution.width / desktopResolutionWidth;
         scaleTimes = Math.Round(scaleTimes, 1);
         leftEdge *= scaleTimes;

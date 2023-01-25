@@ -16,6 +16,12 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Scene 1");
     }
+    
+    public void Scene1_2()
+    {
+        SceneManager.LoadScene("Scene1_2");
+    }
+
     public void Scene2()
     {
         SceneManager.LoadScene("Scene 2");

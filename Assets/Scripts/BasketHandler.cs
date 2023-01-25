@@ -11,8 +11,8 @@ public class BasketHandler : MonoBehaviour
     public event Action UpdateScoreboard;
     private bool mousePressed;
     Vector3 mouseWorldPosition;
-    private float initialEdge = 7.5f;
-    private float leftEdge = -7.5f, rightEdge = 7.5f;
+    private float initialEdge = 12.5f;
+    private float leftEdge, rightEdge;
     private Vector2 initialScale = new Vector2(0.34f, 0.34f);
 
     private void Awake()
