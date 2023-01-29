@@ -34,7 +34,7 @@ namespace CartoonFX
 		{
 			AnimatedLight.editorPreview = EditorPrefs.GetBool("CFXR Light EditorPreview", true);
 	#if !DISABLE_CAMERA_SHAKE
-			CameraShake.editorPreview = EditorPrefs.GetBool("CFXR CameraShake EditorPreview", true);
+			//CameraShake.editorPreview = EditorPrefs.GetBool("CFXR CameraShake EditorPreview", true);
 	#endif
 		}
 #endif
@@ -446,7 +446,7 @@ namespace CartoonFX
 		[Tooltip("Defines an action to execute when the Particle System has completely finished playing and emitting particles.")]
 		public ClearBehavior clearBehavior = ClearBehavior.Destroy;
 		[Space]
-		public CameraShake cameraShake;
+		//public CameraShake cameraShake;
 		[Space]
 		public AnimatedLight[] animatedLights;
 		[Tooltip("Defines which Particle System to track to trigger light fading out.\nLeave empty if not using fading out.")]
@@ -475,22 +475,22 @@ namespace CartoonFX
 			}
 #endif
 
-#if !DISABLE_CAMERA_SHAKE
-			if (cameraShake != null && cameraShake.enabled)
-			{
-				cameraShake.StopShake();
-			}
-#endif
+//#if !DISABLE_CAMERA_SHAKE
+//			if (cameraShake != null && cameraShake.enabled)
+//			{
+//				cameraShake.StopShake();
+//			}
+//#endif
 		}
 
 #if !DISABLE_CAMERA_SHAKE || !DISABLE_CLEAR_BEHAVIOR
 		void Awake()
 		{
-	#if !DISABLE_CAMERA_SHAKE
-			if (cameraShake != null && cameraShake.enabled)
-			{
-				cameraShake.fetchCameras();
-			}
+	//#if !DISABLE_CAMERA_SHAKE
+	//		if (cameraShake != null && cameraShake.enabled)
+	//		{
+	//			cameraShake.fetchCameras();
+	//		}
 	#endif
 	#if !DISABLE_CLEAR_BEHAVIOR
 			startFrameOffset = GlobalStartFrameOffset++;
@@ -502,7 +502,7 @@ namespace CartoonFX
 				materialPropertyBlock = new MaterialPropertyBlock();
 			}
 		}
-#endif
+//#endif
 
 			void OnEnable()
 		{
@@ -588,15 +588,15 @@ namespace CartoonFX
 #endif
 
 #if !DISABLE_CAMERA_SHAKE
-			if (cameraShake != null && cameraShake.enabled && !GlobalDisableCameraShake)
+			//if (cameraShake != null && cameraShake.enabled && !GlobalDisableCameraShake)
 			{
 #if UNITY_EDITOR
-				if (!cameraShake.isShaking)
-				{
-					cameraShake.fetchCameras();
-				}
+				//if (!cameraShake.isShaking)
+				//{
+					//cameraShake.fetchCameras();
+				//}
 #endif
-				cameraShake.animate(time);
+				//cameraShake.animate(time);
 			}
 #endif
 		}
@@ -725,10 +725,10 @@ namespace CartoonFX
 			if (particleTime != parentParticle.time)
 			{
 #if !DISABLE_CAMERA_SHAKE
-				if (cameraShake != null && cameraShake.enabled && parentParticle.time < particleTime && parentParticle.time < 0.05f)
-				{
-					cameraShake.StartShake();
-				}
+				//if (cameraShake != null && cameraShake.enabled && parentParticle.time < particleTime && parentParticle.time < 0.05f)
+				//{
+				//	cameraShake.StartShake();
+				//}
 #endif
 #if !DISABLE_LIGHTS || !DISABLE_CAMERA_SHAKES
 				Animate(particleTimeUnwrapped);
@@ -816,7 +816,7 @@ namespace CartoonFX
 				{
 					shakeEditorPreview = shakePreview;
 					EditorPrefs.SetBool("CFXR CameraShake EditorPreview", shakePreview);
-					CFXR_Effect.CameraShake.editorPreview = shakePreview;
+					//CFXR_Effect.CameraShake.editorPreview = shakePreview;
 				}
 #endif
 			}
