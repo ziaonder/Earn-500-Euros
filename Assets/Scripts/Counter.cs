@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ public class Counter : MonoBehaviour
     public event Action OnTimeElapse;
     public bool isGameOver;
     private TextMeshProUGUI _textMeshPro;
-    private int counter = 5;
+    private int counter = 90;
 
     void Start()
     {

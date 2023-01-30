@@ -17,6 +17,7 @@ public class BasketHandler : MonoBehaviour
 
     private void Awake()
     {
+        winSound.volume = 0.3f;
         if (Screen.currentResolution.width > Screen.currentResolution.height)
         {
             gameObject.transform.localScale = initialScale;
