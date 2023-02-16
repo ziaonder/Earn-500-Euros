@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ButtonEvents : MonoBehaviour
 {
     [SerializeField] private GameObject[] imageGameObjects;
-    [SerializeField] private GameObject function;
+    [SerializeField] private GameObject function, functionUI, informationUI, attentionWarning;
 
     private void Start()
     {
@@ -19,13 +19,23 @@ public class ButtonEvents : MonoBehaviour
     }
     public void Exit()
     {
-    #if (UNITY_EDITOR)
-            UnityEditor.EditorApplication.isPlaying = false;
-    #elif (UNITY_STANDALONE) 
-        Application.Quit();
-    #elif (UNITY_WEBGL)
-        Application.OpenURL("about:blank");
-    #endif
+        SceneManager.LoadScene("Scene 1");        
+    }
+
+    public void DisableAttentionWarning()
+    {
+        attentionWarning.SetActive(false);
+    }
+    
+
+    public void EnableFunctionUI()
+    {
+        functionUI.SetActive(true);
+    }
+
+    public void EnableInformationUI()
+    {
+        informationUI.SetActive(true);
     }
     public void SetDraggable()
     {

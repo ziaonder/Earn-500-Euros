@@ -661,7 +661,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click / Touch anywhere on the screen to take control of the basket. Basket
     is controlled using the mouse. The goal is to collect diamond, gold and silver.
-    Avoid collecting tin and coal as they are calculated as negative points at the
+    Avoid collecting tin and coal as they are calculated as negative points in the
     end. You will have 90 seconds to reach 500 Euros in order to win the game. A
     new screen will appear after the counter reaches zero. There you will see a button
     named CalculateMoney(), after clicking it you will be able to drag and drop the
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.05
+  m_fontSize: 36.8
   m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 1

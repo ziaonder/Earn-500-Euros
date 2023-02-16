@@ -11,7 +11,7 @@ public class TextResultScript : MonoBehaviour
         Instance = this;
     }
     private TextMeshProUGUI TMPro;
-    private int diamondValue = 10, goldValue = 5, silverValue = 2, tinValue = -5, coalValue = -2;
+    private int diamondValue = 50, goldValue = 30, silverValue = 10, tinValue = -30, coalValue = -10;
     public static int TotalGainedMoney;
 
     private void Start()

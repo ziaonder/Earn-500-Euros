@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class BasketHandler : MonoBehaviour
@@ -9,7 +10,7 @@ public class BasketHandler : MonoBehaviour
     public static BasketHandler Instance;
     public event Action OnObjectCollect;
     public event Action UpdateScoreboard;
-    private bool mousePressed;
+    private bool mousePressed = true;
     Vector3 mouseWorldPosition;
     private float initialEdge = 12.5f;
     private float leftEdge, rightEdge;
@@ -18,33 +19,37 @@ public class BasketHandler : MonoBehaviour
     private void Awake()
     {
         winSound.volume = 0.3f;
-        if (Screen.currentResolution.width > Screen.currentResolution.height)
-        {
-            gameObject.transform.localScale = initialScale;
-            leftEdge = -initialEdge;
-            rightEdge = initialEdge;
-        }
-        else
-        {
-            gameObject.transform.localScale = initialScale / 2;
-        }
+        gameObject.transform.localScale = initialScale;
+        leftEdge = -initialEdge;
+        rightEdge = initialEdge;
         
         Instance = this;
+    }
+    #region WebGL is on Mobile Check
 
+    [DllImport("__Internal")]
+    private static extern bool IsMobile();
+
+    public bool isMobile()
+    {
+#if !UNITY_EDITOR && UNITY_WEBGL
+return IsMobile();
+#endif
+        return false;
     }
 
+#endregion
     void Update()
     {
-        #region PlayerController
-        if (Input.GetMouseButtonDown(0))
-        {
-            mousePressed = true;    
-        }
+#region PlayerController
 
-        if(mousePressed == true)
+        if (mousePressed == true)
         {
-            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
+            if(isMobile() == false)
+                mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            else
+                mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
+
             if (mouseWorldPosition.x < leftEdge)
             {
                 mouseWorldPosition.x = leftEdge;
@@ -57,7 +62,7 @@ public class BasketHandler : MonoBehaviour
             
             transform.position = new Vector3(mouseWorldPosition.x, transform.position.y, transform.position.z); 
         }
-        #endregion 
+#endregion
     }
     
     private void OnCollisionEnter2D(Collision2D collision)

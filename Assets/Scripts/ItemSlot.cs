@@ -9,6 +9,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 {
     private static bool checkIfAllTaken;
     [SerializeField] private GameObject[] highlights;
+    [SerializeField] private GameObject informationUI;
     [SerializeField] private string slotName;
     public static bool isdiamondTaken, isGoldTaken, isSilverTaken, isTinTaken, isCoalTaken;
     private bool[] isAllTaken = new bool[] { isdiamondTaken, isGoldTaken, isSilverTaken, isTinTaken, isCoalTaken };
@@ -33,6 +34,7 @@ public class ItemSlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     {
         if (isdiamondTaken == true && isGoldTaken == true && isSilverTaken == true && isTinTaken == true && isCoalTaken == true)
         {
+            informationUI.SetActive(false);
             DisableImage();
             checkIfAllTaken = true;
             UIMethod.SetNewValues();

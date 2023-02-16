@@ -20,12 +20,8 @@ public class SpawnObjects : MonoBehaviour
     }
     private void Awake()
     {
-        // This if statement extends the borders of spawn point if the device is desktop.
-        if(Screen.currentResolution.width > Screen.currentResolution.height)
-        {
-            leftEdge *= 2;
-            rightEdge *= 2;
-        }
+        leftEdge *= 2;
+        rightEdge *= 2;
 
         Device currentlyUsedDevice = GetDevice();
         desktopResolutionWidth = 1920f;
@@ -37,11 +33,6 @@ public class SpawnObjects : MonoBehaviour
 
         foreach(GameObject i in fallableObjects)
         {
-            if (currentlyUsedDevice == Device.mobile)
-            {
-                i.transform.localScale = initialScale / 2;
-            }
-            else
                 i.transform.localScale = initialScale;
         }
     }
@@ -65,6 +56,7 @@ public class SpawnObjects : MonoBehaviour
     {
         while (!Counter.Instance.isGameOver)
         {
+            
             Instantiate(fallableObjects[CreateIndex()], new Vector3(CreateSpawnPoint(), transform.position.y),
                 Quaternion.identity);
             if(spawnTime > .5f)

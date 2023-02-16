@@ -12,8 +12,6 @@ public class FallingObjectController : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         UpdateSpeed();
-        //SetInitialSpeed();
-        //Fall();
         BasketHandler.Instance.OnObjectCollect += UpdateSpeed;
         BasketHandler.Instance.OnObjectCollect += DestroyCollidedObject;
     }
