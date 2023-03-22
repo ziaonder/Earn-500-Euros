@@ -1603,6 +1603,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1318223528, guid: 9ef411ba56902044eb652054ca19be45, type: 3}
+      propertyPath: speed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318223528, guid: 9ef411ba56902044eb652054ca19be45, type: 3}
       propertyPath: winSound
       value: 
       objectReference: {fileID: 1318223537}
@@ -1644,7 +1648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3219911866358422036, guid: 9ef411ba56902044eb652054ca19be45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.000000007450581
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3219911866358422036, guid: 9ef411ba56902044eb652054ca19be45, type: 3}
       propertyPath: m_LocalPosition.y

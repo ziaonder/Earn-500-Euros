@@ -494,6 +494,7 @@ MonoBehaviour:
   function: {fileID: 28079651}
   functionUI: {fileID: 1258104856}
   informationUI: {fileID: 1770462835}
+  attentionWarning: {fileID: 0}
 --- !u!224 &36542736 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8398992052393991293, guid: cf7fb0b98e7f7aa4a91513aa17ec05a9, type: 3}
@@ -3574,7 +3575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 226}
+  m_AnchoredPosition: {x: 179, y: 119}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!1 &1772141835 stripped
