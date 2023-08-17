@@ -42,6 +42,5 @@ public class TextResultScript : MonoBehaviour
             tinValue * FallingObjectController.GetCount("Tin") + coalValue * FallingObjectController.GetCount("Coal");
 
         TMPro.text = "€" + TotalGainedMoney.ToString();
-        ScormSettings.Instance.AddScore();
     }
 }

@@ -33,7 +33,7 @@ public class SpawnObjects : MonoBehaviour
 
         foreach(GameObject i in fallableObjects)
         {
-                i.transform.localScale = initialScale;
+            i.transform.localScale = initialScale;
         }
     }
 
@@ -44,9 +44,9 @@ public class SpawnObjects : MonoBehaviour
             return Device.desktop;
         }
         else
-        return Device.mobile;
+            return Device.mobile;
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         StartCoroutine(SpawnObjectsInTime());   

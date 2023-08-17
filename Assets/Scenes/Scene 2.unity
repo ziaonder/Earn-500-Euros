@@ -581,11 +581,11 @@ MonoBehaviour:
   silverSpeed: 2.5
   tinSpeed: 3
   coalSpeed: 5
-  diamondAcc: 0.2
-  goldAcc: 0.2
-  silverAcc: 0.2
-  tinAcc: 0.2
-  coalAcc: 0.2
+  diamondAcc: 1
+  goldAcc: 1
+  silverAcc: 1
+  tinAcc: 1
+  coalAcc: 1
 --- !u!4 &776331666
 Transform:
   m_ObjectHideFlags: 0
