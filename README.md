@@ -1,6 +1,7 @@
 # Earn 500 Euros
-A downloadable game for Windows made with Unity.
-Download it on [itch.io](https://ziaonder.itch.io/earn-500)
+A downloadable game for Windows made with Unity.<br>
+Download it on [itch.io](https://ziaonder.itch.io/earn-500)<br>
+
 **Instructions**
 - Click / Touch anywhere on the screen to take control of the basket.
 - The basket is controlled using the mouse. 
